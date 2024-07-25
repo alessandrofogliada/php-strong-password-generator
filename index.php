@@ -2,13 +2,31 @@
 
 // la variabile mi restituisce la lunghezza della password decisa dall'utente 
 $lenght_password = $_GET['lenght'];
-
-var_dump($lenght_password);
-
+var_dump ($lenght_password);
 // creo una funzione che mi generi una password random della lunghezza indicata dell'utente 
 
-function passwordGenerator()
 
+
+function passwordGenerator(){
+    for($i = 0 ; $i <= $lenght_password ; $i++) {
+
+        // creo una variabile dove saranno inseriti i caratteri random 
+        $password_assembled = [];
+
+        // genero un numero random 
+        $new_number = rand(1 , 56);
+        // lo inserisco nell'array creato sopra 
+        $password_assembled [] = $new_number;
+        //   var_dump($new_number);
+
+        // genero una lettera random 
+        $new_letter = chr(rand(65,90));
+        // lo inserisco nell'array creato sopra 
+        $password_assembled [] = $new_letter;
+
+        var_dump($password_assembled);
+    }
+}
 
 ?>
 
